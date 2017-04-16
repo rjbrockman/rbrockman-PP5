@@ -36,7 +36,22 @@
 		<h2 id="textoutput" class="center">Show results here</h2>
 	</div>
 	<script type="text/javascript">
-		
+		document.getElementById('entrybutton').addEventListener("click", userclick);
+		function userclick() {
+		<!--Store the message typed in messagetext variable. -->
+		var messagetext = document.getElementById('entryinput').value;
+			if(messagetext != ""){
+				<!--If a message was typed in, append messagetext to Rich Brockman:. -->
+				alert("Rich Brockman: " + messagetext);
+				<!--Replace "Show results here, with whatever message was inputted. -->
+				document.getElementById('textoutput').innerHTML = messagetext;
+				document.getElementById('entrybutton').addEventListener("click", userclick);
+			}
+			else{
+			    <!-- Remind User to type in a message. -->
+				alert("Would you please enter some text?"); 
+			}	
+		}
 	</script>
 </body>
 </html>
